@@ -1,9 +1,11 @@
 package com.example.jason;
 
+import android.content.Intent;
 import android.location.Address;
         import android.location.Geocoder;
         import android.os.Bundle;
-        import android.text.method.ScrollingMovementMethod;
+import android.text.Layout;
+import android.text.method.ScrollingMovementMethod;
         import android.view.Menu;
         import android.view.MenuItem;
 
@@ -135,6 +137,9 @@ public class MainActivity extends Activity {
             System.out.println(strUrl);
 
             new ReadTransitJSONFeedTask().execute(strUrl);
+            //Intent intent = new Intent(this, MainActivity.class); // Intent - class object instance of class (Intent)- constructor takes two arguments (Context - this - for everything in the current Activity <Main>, Class - DisplayMessageActivity.class - encapsulates calling a class (a Different Activity)
+            //startActivity(intent); // in-house method, starts new Activity, taking the Intent as an argument(starts instance of DisplayMessageActivity class)
+
         }
         catch(UnsupportedEncodingException e){
             Log.d("encodingerror",e.getMessage());
@@ -215,7 +220,8 @@ public class MainActivity extends Activity {
 
                 }
                 // display the results in textview txtDirections
-
+                txtDirections = (TextView) findViewById(R.id.txtDirections);
+                txtDirections.setText(directions);
             }
             catch (Exception e) {
                 // TODO Auto-generated catch block

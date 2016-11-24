@@ -51,7 +51,9 @@
             android:width="50dp"
             android:onClick="getInfo"
             android:textColor="@android:color/black"
-            android:height="30dp" />
+            android:height="30dp"
+            />
+
 
         <TextView android:text="@string/directions"
             android:layout_width="329dp"
@@ -61,8 +63,6 @@
             android:scrollbars = "vertical"
 
             android:layout_weight="0.73" />
-
-
     </LinearLayout>
 
 </RelativeLayout>
